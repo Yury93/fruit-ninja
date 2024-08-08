@@ -109,7 +109,7 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-           // progressBarFull.style.width = 100 * progress + "%"; 
+           progressBarFull.style.width = 100 * progress + "%"; 
             
             rotateElement(progressBarFull,360);
               }).then((unityInstance) => {
