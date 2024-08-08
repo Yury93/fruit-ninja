@@ -100,18 +100,25 @@
 
         loadingBar.style.display = "block";
     
+        let currentAngle = 0;
+
         function rotateElement(element, angle) {
             element.style.transform = `rotate(${angle}deg)`;
         }
 
-
+        function updateRotation() {
+            if (currentAngle == 360) { currentAngle = 0; }
+            currentAngle += 1; 
+            rotateElement(progressBarFull, currentAngle); 
+            requestAnimationFrame(updateRotation);
+        }
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
            progressBarFull.style.width = 100 * progress + "%"; 
-            
-            rotateElement(progressBarFull,360);
+
+            updateRotation();
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
