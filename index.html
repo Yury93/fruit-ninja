@@ -99,9 +99,7 @@
       }
 
         loadingBar.style.display = "block";
-        const progressBarEmpty = document.getElementById('unity-progress-bar-empty');
-       // const progressBarFull = document.getElementById('unity-progress-bar-full');
-
+    
         function rotateElement(element, angle) {
             element.style.transform = `rotate(${angle}deg)`;
         }
@@ -111,10 +109,8 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-            progressBarFull.style.width = 100 * progress + "%";
-            //if (progressBarEmpty != null)
-            //    rotateElement(progressBarEmpty, 180);
-            if (progressBarFull != null)
+           // progressBarFull.style.width = 100 * progress + "%"; 
+            
             rotateElement(progressBarFull,360);
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
