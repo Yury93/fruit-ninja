@@ -115,9 +115,10 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-           progressBarFull.style.width = 100 +"%"; 
-
+          createUnityInstance(canvas, config, (progress) => {
+              console.log(progress);
+            progressBarFull.style.width = 100 + "%";
+            progressBarFull.style.height = 100 + "%"; 
             updateRotation();
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
