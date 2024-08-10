@@ -113,8 +113,8 @@
             }
 
             const elapsedTime = performance.now() - startTime;
-            const angle = (elapsedTime / 1000) * rotationSpeed;  
-            currentAngle = angle % 360;  
+            const angle = (elapsedTime / 1000);  
+            currentAngle += angle % 360;  
             rotateElement(progressBarFull, currentAngle);
 
             requestAnimationFrame(updateRotation);  
