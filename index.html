@@ -108,7 +108,7 @@
 
         function updateRotation() {
             if (currentAngle == 360) { currentAngle = 0; }
-            currentAngle += 1; 
+            currentAngle += 0.5; 
             rotateElement(progressBarFull, currentAngle); 
             requestAnimationFrame(updateRotation);
         }
