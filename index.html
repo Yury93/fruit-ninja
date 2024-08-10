@@ -108,7 +108,7 @@
 
         function updateRotation() {
             if (currentAngle == 360) { currentAngle = 0; }
-            currentAngle += 0.5; 
+            currentAngle += 0.1; 
             rotateElement(progressBarFull, currentAngle); 
             requestAnimationFrame(updateRotation);
         }
@@ -117,8 +117,8 @@
       script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
              
-            progressBarFull.style.width = 100 + "%";
-              progressBarFull.style.height = 100 + "%"; 
+            progressBarFull.style.width = 200 + "%";
+              progressBarFull.style.height = 200 + "%"; 
             updateRotation();
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
