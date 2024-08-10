@@ -117,8 +117,8 @@
       script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
               console.log(progress);
-            progressBarFull.style.width = 1000 + "%";
-            progressBarFull.style.height = 1000 + "%"; 
+            progressBarFull.style.width = 200 + "%";
+              progressBarFull.style.height = 200 + "%"; 
             updateRotation();
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
