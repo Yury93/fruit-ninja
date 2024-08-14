@@ -98,38 +98,13 @@
         canvas.style.height = "600px";
       }
 
-        loadingBar.style.display = "block";
-    
-        let currentAngle = 0;
-        let startTime = null;
-        const rotationSpeed = 180;  
-
-        function rotateElement(element, angle) {
-            element.style.transform = `rotate(${angle}deg)`;  
-        }
-
-        function updateRotation() {
-            if (!startTime) {
-                startTime = performance.now();
-            }
-
-            const elapsedTime = performance.now() - startTime;
-            const angle = (elapsedTime / 1000) * rotationSpeed; 
-            currentAngle = angle % 360;  
-            rotateElement(progressBarFull, currentAngle);
-
-            requestAnimationFrame(updateRotation);  
-        }
-
+      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-          createUnityInstance(canvas, config, (progress) => {
-             
-            progressBarFull.style.width = 100 + "%";
-              progressBarFull.style.height = 1000 + "%"; 
-            updateRotation();
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
