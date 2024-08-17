@@ -7,8 +7,7 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-        body {
-            /* Убираем скролл */
+        body { 
             overflow: hidden;
         }
     </style>
@@ -23,14 +22,11 @@
             </div>
         </div>
         <div id="unity-warning"> </div>
-        <div id="unity-footer">
-            <div id="unity-webgl-logo"></div>
-            <div id="unity-fullscreen-button"></div>
-            <div id="unity-build-title">ninja</div>
+     
         </div>
     </div>
     <script>
-
+        var myGameInstance = null;
         var container = document.querySelector("#unity-container");
         var canvas = document.querySelector("#unity-canvas");
         var loadingBar = document.querySelector("#unity-loading-bar");
@@ -112,6 +108,7 @@
             createUnityInstance(canvas, config, (progress) => {
                 progressBarFull.style.width = 100 * progress + "%";
             }).then((unityInstance) => {
+                myGameInstance = unityInstance;
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                     unityInstance.SetFullscreen(1);
