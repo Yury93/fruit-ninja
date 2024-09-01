@@ -105,6 +105,7 @@
         script.onload = () => {
             createUnityInstance(canvas, config, (progress) => {
                 progressBarFull.style.width = 100 * progress + "%";
+                unitySetLoaderProgressTo(progress);
             }).then((unityInstance) => {
                 myGameInstance = unityInstance;
                 loadingBar.style.display = "none";
@@ -116,6 +117,22 @@
 
         document.body.appendChild(script);
 
+        function unitySetLoaderProgressTo(value) {
+            const fill = customLoadingBar.getElementsByClassName("fill")[0];
+            const fillText = customLoadingBar.getElementsByClassName("label")[0];
+
+            fill.animate(
+                [
+                    { width: (value * 100) + "%" }
+                ],
+                {
+                    duration: 300,
+                    fill: "forwards"
+                }
+            );
+
+            fillText.textContent = (value * 100).toFixed() + "%";
+        }
     </script>
 </body>
 </html>
