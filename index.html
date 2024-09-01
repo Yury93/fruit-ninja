@@ -20,6 +20,8 @@
             <div id="unity-logo"></div>
             <div id="unity-progress-bar-empty">
                 <div id="unity-progress-bar-full"></div>
+            </div>
+            <div id="custom-loader"> 
                 <div class="label"></div>
             </div>
         </div>
@@ -34,7 +36,7 @@
         var loadingBar = document.querySelector("#unity-loading-bar");
         var progressBarFull = document.querySelector("#unity-progress-bar-full");
         var warningBanner = document.querySelector("#unity-warning");
-
+        var customLoadingBar = document.querySelector("#custom-loader");
         // Shows a temporary message banner/ribbon for a few seconds, or
         // a permanent error message on top of the canvas if type=='error'.
         // If type=='warning', a yellow highlight color is used.
