@@ -122,7 +122,8 @@
         document.body.appendChild(script);
 
         function unitySetLoaderProgressTo(value) { 
-            const fillText = customLoadingBar.getElementsByClassName("label")[0]; 
+            const fillText = customLoadingBar.getElementsByClassName("label")[0];
+            fillText.style.color = "#ffffff"; 
             fillText.textContent = (value * 100).toFixed() + "%";
         }
     </script>
