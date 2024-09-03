@@ -19,7 +19,7 @@ body { padding: 0; margin: 0 }
   position: relative; 
   left: 50%; / Смещаем на 50% влево /
   top: 50%; 
-  font-size: 35px;
+  font-size: 20px;
   text-align: center; 
   font-family: sans-serif,calibri; 
   color: #fff;
