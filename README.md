@@ -1,1 +1,7 @@
-web game https://yury93.github.io/TestArcadia/
+Симпотичная мини игра (клон fruit ninja) сделанная в 2024 году
+
+# Технологический стек
+Unity - *движок*
+C# - *язык разработки*
+
+поиграть можно тут  https://yury93.github.io/fruit-ninja/
